@@ -25,7 +25,7 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: false}))
 app.use(flash())
 app.use(session({
-    secret: process.env.SESSION_SECRET ||techwavesride,
+    secret: process.env.SESSION_SECRET || techwavesride,
     resave: false, // We wont resave the session variable if nothing is changed
     saveUninitialized: false
 }))
@@ -93,6 +93,6 @@ function checkNotAuthenticated(req, res, next){
     next()
 }
 
-app.listen(3000, function () {
+app.listen(process.env.PORT || 3000, function () {
     console.log("Server started on port 3000")
 });
