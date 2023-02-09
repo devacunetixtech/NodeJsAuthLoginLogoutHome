@@ -5,7 +5,7 @@ require('dotenv').config();
 // Importing Libraies that we installed using npm
 const express = require("express");
 const app = express();
-const ejs = require('ejs');
+// const ejs = require('ejs');
 const bcrypt = require("bcrypt");// Importing bcrypt package
 const passport = require("passport")
 const initializePassport = require("./passport-config")
