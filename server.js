@@ -62,7 +62,7 @@ app.post("/register", checkNotAuthenticated, async(req, res) => {
 
 //ROUTES
 app.get("/", checkAuthenticated, (req, res) => {
-    res.render("index", {name: name})
+    res.render("index", {name: req.body.name});
 })
 
 app.get("/login", checkNotAuthenticated, (req, res) => {
