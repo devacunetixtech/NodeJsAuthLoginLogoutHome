@@ -1,7 +1,7 @@
 if (process.env.NODE_ENV !== "production") {
     require("dotenv").config()
 }
-console.log(process.env.NODE_ENV);
+
 require('dotenv').config();
 // Importing Libraies that we installed using npm
 const express = require("express");
@@ -62,7 +62,7 @@ app.post("/register", checkNotAuthenticated, async(req, res) => {
 
 //ROUTES
 app.get("/", checkAuthenticated, (req, res) => {
-    res.render("index", {name: req.body.name});
+    res.render("index", {name: users[0].name});
 })
 
 app.get("/login", checkNotAuthenticated, (req, res) => {
