@@ -12,7 +12,8 @@ const passport = require("passport")
 const initializePassport = require("./passport-config")
 const flash = require("express-flash")
 const session = require("express-session")
-const methodOverride = require("method-override")
+const methodOverride = require("method-override");
+const { name } = require("ejs");
 
 initializePassport(
     passport,
@@ -61,7 +62,7 @@ app.post("/register", checkNotAuthenticated, async(req, res) => {
 
 //ROUTES
 app.get("/", checkAuthenticated, (req, res) => {
-    res.render("index")
+    res.render("index", {name: name})
 })
 
 app.get("/login", checkNotAuthenticated, (req, res) => {
